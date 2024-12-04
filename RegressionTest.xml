@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Qapitol/Documents/KDD/OrangeHRM/src/test/java/com/OrangeHRM/TestCases/ProjectInfoTest.java">
+        <classes>
+            <class name="com.OrangeHRM.TestCases.ProjectInfoTest">
+                <methods>
+                    <include name="createCustomer"/>
+                    <include name="createProjects"/>
+                    <include name="createProjectsWithNewCustomer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

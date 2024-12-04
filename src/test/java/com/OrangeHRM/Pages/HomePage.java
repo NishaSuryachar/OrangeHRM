@@ -56,4 +56,18 @@ public class HomePage
         this.projectsEdt = projectsEdt;
     }
 
+    public void Homepage()
+    {
+        getTimeEdt().click();
+        getProjectInfoEdt().click();
+        getCustomersEdt().click();
+    }
+
+    public void Homepage1()
+    {
+        getTimeEdt().click();
+        getProjectInfoEdt().click();
+        getProjectsEdt().click();
+    }
+
 }

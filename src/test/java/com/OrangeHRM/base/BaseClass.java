@@ -49,7 +49,4 @@ public class BaseClass
 //    public void closTheBrowser() {
 //        driver.quit();
 //    }
-
-
-
 }
