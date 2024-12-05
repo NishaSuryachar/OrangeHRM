@@ -54,6 +54,11 @@ public class ProjectInfoTest extends BaseClass
         cp.addProjects1(driver,PROJECTNAME,DESC,PROADMIN);
     }
 
+    @Test
+    public void Test() throws IOException, InterruptedException {
+       System.out.println("Hello");
+    }
+
 
 
 }
