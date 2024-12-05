@@ -1,5 +1,6 @@
 package com.OrangeHRM.base;
 
+import com.OrangeHRM.Pages.HomePage;
 import com.OrangeHRM.Pages.LoginPage;
 import com.OrangeHRM.Util.ExcelUtility;
 import com.OrangeHRM.Util.PropertyUtility;
@@ -7,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -30,8 +32,8 @@ public class BaseClass
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @BeforeMethod
 
+    @BeforeMethod
     public void LoginToApp() throws IOException {
 
         PropertyUtility putil = new PropertyUtility();
@@ -44,9 +46,16 @@ public class BaseClass
         lp.LoginPage(USERNAME,PASSWORD);
     }
 
+    @AfterMethod
+    public void LogoutToApp()
+    {
+        HomePage hp=new HomePage(driver);
+        hp.Logout();
+    }
 
-//    @AfterClass
-//    public void closTheBrowser() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void closTheBrowser()
+    {
+        driver.quit();
+    }
 }

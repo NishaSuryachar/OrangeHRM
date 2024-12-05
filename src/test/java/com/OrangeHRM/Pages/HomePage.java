@@ -19,6 +19,12 @@ public class HomePage
     @FindBy(xpath = "//a[text()='Projects']")
     private WebElement projectsEdt;
 
+    @FindBy(xpath = "//img[@alt='profile picture' and @class='oxd-userdropdown-img']")
+    private WebElement profileImgEdt;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    private WebElement logoutEdt;
+
    public HomePage(WebDriver driver)
    {
        PageFactory.initElements(driver, this);
@@ -30,6 +36,22 @@ public class HomePage
 
     public void setTimeEdt(WebElement timeEdt) {
         this.timeEdt = timeEdt;
+    }
+
+    public WebElement getProfileImgEdt() {
+        return profileImgEdt;
+    }
+
+    public void setProfileImgEdt(WebElement profileImgEdt) {
+        this.profileImgEdt = profileImgEdt;
+    }
+
+    public WebElement getLogoutEdt() {
+        return logoutEdt;
+    }
+
+    public void setLogoutEdt(WebElement logoutEdt) {
+        this.logoutEdt = logoutEdt;
     }
 
     public WebElement getProjectInfoEdt() {
@@ -68,6 +90,13 @@ public class HomePage
         getTimeEdt().click();
         getProjectInfoEdt().click();
         getProjectsEdt().click();
+    }
+
+    public void Logout()
+    {
+        getProfileImgEdt().click();
+        getLogoutEdt().click();
+
     }
 
 }
